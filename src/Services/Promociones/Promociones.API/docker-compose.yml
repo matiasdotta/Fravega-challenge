@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  promocionesdb:
+    image: mongo
+  promociones.api:
+    image: ${DOCKER_REGISTRY-}promocionesapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+volumes:
+  mongo_data: 
